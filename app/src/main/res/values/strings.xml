@@ -9,6 +9,15 @@
     <string name="button_exit">Salir</string>
 
     <!-- Tabs Names -->
-    <string name="asteroid_tab">Asteroides</string>
-    <string name="asteroid_title">Asteroides</string>
+    <string name="asteroid_tab">Asteroids</string>
+    <string name="custombutton_tab">Botón Personalizado</string>
+
+
+    <!-- Asteroid tab Strings -->
+    <string name="asteroid_title">Asteroids</string>
+
+    <!-- Custom button tab Strings -->
+    <string name="hint_write_number">Instroduce un número</string>
+    <string name="hint_result">Resultado</string>
+    <string name="_0">0</string>
 </resources>

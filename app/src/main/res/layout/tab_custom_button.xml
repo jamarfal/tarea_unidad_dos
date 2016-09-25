@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
@@ -20,18 +19,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp"
         android:ems="10"
-        android:hint="Introduce un número"
+        android:hint="@string/hint_write_number"
         android:inputType="numberDecimal"
         tools:hint="Introduce un número" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/custom_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button0"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/button"
-        android:onClick="pressButton" />
+        android:background="@drawable/button" />
 
     <Button
         android:id="@+id/button0"
@@ -39,9 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/number_edit_text"
         android:layout_centerHorizontal="true"
-        android:onClick="pressButton0"
         android:tag="0"
-        android:text="0" />
+        android:text="@string/_0" />
 
     <TextView
         android:id="@+id/output"
@@ -49,12 +46,11 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/number_edit_text"
         android:layout_alignStart="@+id/number_edit_text"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/custom_button"
         android:layout_marginLeft="61dp"
         android:layout_marginStart="61dp"
         android:layout_marginTop="27dp"
-        android:hint="Resultado"
-        android:text=""
+        android:hint="@string/hint_result"
         android:textColor="#0000FF"
-        tools:hint="Resultado" />
+        tools:hint="@string/hint_result" />
 </RelativeLayout>
