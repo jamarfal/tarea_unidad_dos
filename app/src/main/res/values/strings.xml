@@ -1,8 +1,14 @@
 <resources>
-    <string name="app_name">Asteroides</string>
 
+    <string name="app_name">Tarea Unidad 2</string>
+
+    <!-- Button names -->
     <string name="button_play">Jugar</string>
     <string name="button_config">Configurar</string>
     <string name="button_about">Acerca de</string>
     <string name="button_exit">Salir</string>
+
+    <!-- Tabs Names -->
+    <string name="asteroid_tab">Asteroides</string>
+    <string name="asteroid_title">Asteroides</string>
 </resources>

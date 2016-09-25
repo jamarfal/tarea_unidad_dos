@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Asteroids</string>
+    <string name="app_name">Unit 2 Exercise</string>
 
+    <!-- Button names -->
     <string name="button_play">Play</string>
     <string name="button_config">Config</string>
     <string name="button_about">About</string>
     <string name="button_exit">Exit</string>
+
+    <!-- Tabs Names -->
+    <string name="asteroid_tab">Asteroids</string>
+    <string name="asteroid_title">Asteroids</string>
 </resources>
