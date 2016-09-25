@@ -11,6 +11,7 @@
     <!-- Tabs Names -->
     <string name="asteroid_tab">Asteroids</string>
     <string name="custombutton_tab">Custom Button</string>
+    <string name="courtcounter_tab">Contador Baloncesto</string>
 
 
     <!-- Asteroid tab Strings -->
