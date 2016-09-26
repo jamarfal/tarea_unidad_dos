@@ -16,4 +16,5 @@
 
     <!-- Calculator dimens -->
     <dimen name="padding_row">10dp</dimen>
+    <dimen name="textsize_calculator_buttons">20sp</dimen>
 </resources>

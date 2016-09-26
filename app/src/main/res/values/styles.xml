@@ -83,12 +83,16 @@
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">1</item>
         <item name="android:gravity">end</item>
+        <item name="android:background">@color/whiteCalculator</item>
     </style>
 
     <style name="Calculator_Button">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColor">@color/whiteCalculator</item>
+        <item name="android:textSize">@dimen/textsize_calculator_buttons</item>
     </style>
 
     <style name="Row_Calculator">
@@ -97,5 +101,14 @@
         <item name="android:layout_weight">1</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:padding">@dimen/padding_row</item>
+    </style>
+
+    <style name="Calculator_Operator_Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@color/colorGrayCalculator</item>
+        <item name="android:textColor">@color/whiteCalculator</item>
+        <item name="android:textSize">@dimen/textsize_calculator_buttons</item>
     </style>
 </resources>
