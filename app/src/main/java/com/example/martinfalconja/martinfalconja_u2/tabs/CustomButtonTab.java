@@ -64,8 +64,19 @@ public class CustomButtonTab extends Fragment {
     }
 
     private void pressCustomButton() {
+        String inputText = input.getText().toString();
         output.setText(String.valueOf(
-                Float.parseFloat(input.getText().toString()) * 2.0));
+                tryParseFloat(inputText) * 2.0));
+    }
+
+    private float tryParseFloat(String number) {
+        float floatNumber;
+        try {
+            floatNumber = Float.parseFloat(number);
+        } catch (NumberFormatException exception) {
+            floatNumber = 0;
+        }
+        return floatNumber;
     }
 
 

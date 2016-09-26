@@ -3,4 +3,13 @@
     <dimen name="margin_buttons">150dp</dimen>
     <dimen name="margin_title">70dp</dimen>
     <dimen name="padding_buttons">16dp</dimen>
+
+
+    <!-- Court counter dimens -->
+    <dimen name="margin_top_textview_courtcounter">32dp</dimen>
+    <dimen name="padding_textview_courtcounter">8dp</dimen>
+    <dimen name="textsize_textview_courtcounter">28sp</dimen>
+    <dimen name="textsize_point_textview">80sp</dimen>
+    <dimen name="marginbottom_throw_button">16dp</dimen>
+    <dimen name="margin_throw_button">38dp</dimen>
 </resources>

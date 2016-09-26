@@ -21,4 +21,12 @@
     <string name="hint_write_number">Enter a number</string>
     <string name="hint_result">Result</string>
     <string name="_0">0</string>
+
+    <!-- Court Counter -->
+    <string name="team_A">Team A</string>
+    <string name="team_B">Team B</string>
+    <string name="_3_points">+3 Points</string>
+    <string name="_2_points">+2 Points</string>
+    <string name="free_throw">Free Throw</string>
+    <string name="reset_button">Reset</string>
 </resources>
