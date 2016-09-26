@@ -12,4 +12,8 @@
     <dimen name="textsize_point_textview">80sp</dimen>
     <dimen name="marginbottom_throw_button">16dp</dimen>
     <dimen name="margin_throw_button">38dp</dimen>
+
+
+    <!-- Calculator dimens -->
+    <dimen name="padding_row">20dp</dimen>
 </resources>
