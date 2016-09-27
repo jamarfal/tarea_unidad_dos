@@ -1,7 +1,6 @@
 package com.example.martinfalconja.martinfalconja_u2.tabs;
 
 import android.os.Bundle;
-import android.support.annotation.StringDef;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,7 +26,7 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
     private final float PTAS = 166.386f;
     private Calculator calculator;
     private float result, firstOperator, secondOperator;
-    private boolean isNewNumber = true, isNewOperation = true, pressedEqualButton = false, pressedOperation = false;
+    private boolean isNewNumber = true, isNewOperation = true, pressedOperation = false;
 
     private TextView display;
     private Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix,
@@ -113,20 +112,20 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
                 converter();
                 break;
             case R.id.button_plus:
-                calculate();
+                calculateActionButton();
                 calculator.setOperation(new Addition());
                 break;
             case R.id.button_subtraction:
-                calculate();
+                calculateActionButton();
                 calculator.setOperation(new Subtraction());
                 break;
 
             case R.id.button_divide:
-                calculate();
+                calculateActionButton();
                 calculator.setOperation(new Divide());
                 break;
             case R.id.button_multiply:
-                calculate();
+                calculateActionButton();
                 calculator.setOperation(new Multyply());
                 break;
             case R.id.button_equal:
@@ -148,7 +147,6 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
         isNewNumber = true;
         isNewOperation = true;
         pressedOperation = false;
-        pressedEqualButton = false;
     }
 
 
@@ -163,26 +161,18 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
     }
 
 
-    private void calculate() {
+    private void calculateActionButton() {
         if (pressedOperation) {
             String text = "Ya ha pulsado una operación";
             showNotification(text);
         } else {
-//            calculator.setFirstOperator(tryParseFloat(getTextInDisplay()));
-//            calculator.setSecondOperator(result);
-//            result = calculator.performOperation();
-
-
             if (isNewOperation) {
                 firstOperator = tryParseFloat(getTextInDisplay());
                 result = firstOperator;
                 isNewOperation = false;
                 isNewNumber = true;
             } else {
-                secondOperator = tryParseFloat(getTextInDisplay());
-                calculator.setFirstOperator(result);
-                calculator.setSecondOperator(secondOperator);
-                result = calculator.performOperation();
+                calculate();
                 display.setText(removeZeros(String.valueOf(result)));
                 isNewNumber = true;
             }
@@ -191,24 +181,23 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
     }
 
     private void equalButtonAction() {
-        if (!isNewOperation) {
-            if (isNewOperation) {
-                firstOperator = tryParseFloat(getTextInDisplay());
-                result = firstOperator;
-                isNewOperation = false;
-                isNewNumber = true;
-            } else {
-                secondOperator = tryParseFloat(getTextInDisplay());
-                calculator.setFirstOperator(result);
-                calculator.setSecondOperator(secondOperator);
-                result = calculator.performOperation();
-                display.setText(removeZeros(String.valueOf(result)));
-                isNewNumber = true;
-            }
-            isNewNumber = true;
-            isNewOperation = true;
-            result = 0;
+        if (isNewOperation) {
+            firstOperator = tryParseFloat(getTextInDisplay());
+            result = firstOperator;
+        } else {
+            calculate();
+            display.setText(removeZeros(String.valueOf(result)));
         }
+        isNewNumber = true;
+        isNewOperation = true;
+        result = 0;
+    }
+
+    private void calculate() {
+        secondOperator = tryParseFloat(getTextInDisplay());
+        calculator.setFirstOperator(result);
+        calculator.setSecondOperator(secondOperator);
+        result = calculator.performOperation();
     }
 
 
