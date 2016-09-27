@@ -60,7 +60,8 @@ public class CustomButtonTab extends Fragment {
 
     private void pressButton0(View v) {
         String inputText = input.getText().toString();
-        input.setText(inputText + v.getTag());
+        String tag = (String) v.getTag();
+        input.setText(inputText + tag);
     }
 
     private void pressCustomButton() {
