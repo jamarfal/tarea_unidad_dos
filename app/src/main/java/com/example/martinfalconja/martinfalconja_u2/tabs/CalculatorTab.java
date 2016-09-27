@@ -14,10 +14,6 @@ import com.example.martinfalconja.martinfalconja_u2.R;
 import com.example.martinfalconja.martinfalconja_u2.logic.calculator_tab.Addition;
 import com.example.martinfalconja.martinfalconja_u2.logic.calculator_tab.Calculator;
 
-/**
- * Created by jamarfal on 26/9/16.
- */
-
 public class CalculatorTab extends Fragment implements View.OnClickListener {
 
     private final String ZERO = "0";
