@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.martinfalconja.martinfalconja_u2.R;
-import com.example.martinfalconja.martinfalconja_u2.logic.BasketBallPlayer;
-import com.example.martinfalconja.martinfalconja_u2.logic.Score;
+import com.example.martinfalconja.martinfalconja_u2.logic.court_counter_tab.BasketBallPlayer;
+import com.example.martinfalconja.martinfalconja_u2.logic.court_counter_tab.Score;
 
 /**
  * Created by jamarfal on 25/9/16.

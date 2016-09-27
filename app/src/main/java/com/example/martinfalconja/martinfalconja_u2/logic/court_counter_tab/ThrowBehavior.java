@@ -1,4 +1,4 @@
-package com.example.martinfalconja.martinfalconja_u2.logic;
+package com.example.martinfalconja.martinfalconja_u2.logic.court_counter_tab;
 
 /**
  * Created by jamarfal on 26/9/16.

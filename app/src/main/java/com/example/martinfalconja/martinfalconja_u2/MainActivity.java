@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTabHost;
 import android.os.Bundle;
 
 import com.example.martinfalconja.martinfalconja_u2.tabs.AsteroidTab;
+import com.example.martinfalconja.martinfalconja_u2.tabs.CalculatorTab;
 import com.example.martinfalconja.martinfalconja_u2.tabs.CourtCounterTab;
 import com.example.martinfalconja.martinfalconja_u2.tabs.CustomButtonTab;
 
@@ -13,6 +14,7 @@ public class MainActivity extends FragmentActivity {
 
     public final String ASTEROID_TAB = "asteroid_tab";
     public final String CUSTOMBUTTON_TAB = "custombutton_tab";
+    public final String CALCULATOR_TAB = "calculator_tab";
     public final String COURTCOUNT_TAB = "courtcounter_tab";
     private FragmentTabHost fragmentTabHost;
 
@@ -32,6 +34,7 @@ public class MainActivity extends FragmentActivity {
                 android.R.id.tabcontent);
         fragmentTabHost.addTab(fragmentTabHost.newTabSpec(ASTEROID_TAB).setIndicator(resources.getString(R.string.asteroid_tab)), AsteroidTab.class, null);
         fragmentTabHost.addTab(fragmentTabHost.newTabSpec(CUSTOMBUTTON_TAB).setIndicator(resources.getString(R.string.custombutton_tab)), CustomButtonTab.class, null);
+        fragmentTabHost.addTab(fragmentTabHost.newTabSpec(CALCULATOR_TAB).setIndicator(resources.getString(R.string.calculator_tab)), CalculatorTab.class, null);
         fragmentTabHost.addTab(fragmentTabHost.newTabSpec(COURTCOUNT_TAB).setIndicator(resources.getString(R.string.custombutton_tab)), CourtCounterTab.class, null);
     }
 }
