@@ -90,13 +90,9 @@
 
                 <Button
                     android:id="@+id/button_zero"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/colorPrimary"
+                    style="@style/Calculator_Button.Zero"
                     android:tag="0"
-                    android:text="@string/_0"
-                    android:textColor="@color/whiteCalculator"
-                    android:textSize="@dimen/textsize_calculator_buttons" />
+                    android:text="@string/_0" />
             </LinearLayout>
 
 
