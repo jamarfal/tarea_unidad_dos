@@ -11,11 +11,6 @@
         style="@style/Calculator_Result"
         android:text="@string/_0" />
 
-    <TextView
-        android:id="@+id/temporal_result_text_view"
-        style="@style/Calculator_Result.Temporal"
-        tools:hint="Resultado temporal" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
