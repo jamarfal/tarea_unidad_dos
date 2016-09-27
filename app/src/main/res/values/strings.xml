@@ -48,4 +48,5 @@
     <string name="divide_symbol">%</string>
     <string name="multiply_symbol">x</string>
     <string name="subtraction_symbol">-</string>
+    <string name="operation_pending">Ya ha pulsado una operación</string>
 </resources>

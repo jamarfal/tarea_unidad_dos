@@ -163,7 +163,7 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
 
     private void calculateActionButton() {
         if (pressedOperation) {
-            String text = "Ya ha pulsado una operación";
+            String text = getString(R.string.operation_pending);
             showNotification(text);
         } else {
             if (isNewOperation) {
