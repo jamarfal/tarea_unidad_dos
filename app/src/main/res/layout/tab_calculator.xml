@@ -116,6 +116,21 @@
                 android:text="@string/ptas" />
 
             <Button
+                android:id="@+id/button_divide"
+                style="@style/Calculator_Operator_Button"
+                android:text="@string/divide_symbol" />
+
+            <Button
+                android:id="@+id/button_multiply"
+                style="@style/Calculator_Operator_Button"
+                android:text="@string/multiply_symbol" />
+
+            <Button
+                android:id="@+id/button_subtraction"
+                style="@style/Calculator_Operator_Button"
+                android:text="@string/subtraction_symbol" />
+
+            <Button
                 android:id="@+id/button_plus"
                 style="@style/Calculator_Operator_Button"
                 android:text="@string/plus" />

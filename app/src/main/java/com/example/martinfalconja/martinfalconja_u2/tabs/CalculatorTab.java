@@ -13,19 +13,26 @@ import android.widget.Toast;
 import com.example.martinfalconja.martinfalconja_u2.R;
 import com.example.martinfalconja.martinfalconja_u2.logic.calculator_tab.Addition;
 import com.example.martinfalconja.martinfalconja_u2.logic.calculator_tab.Calculator;
+import com.example.martinfalconja.martinfalconja_u2.logic.calculator_tab.Divide;
+import com.example.martinfalconja.martinfalconja_u2.logic.calculator_tab.Multyply;
+import com.example.martinfalconja.martinfalconja_u2.logic.calculator_tab.Subtraction;
+
+/**
+ * Created by jamarfal on 26/9/16.
+ */
 
 public class CalculatorTab extends Fragment implements View.OnClickListener {
 
     private final String ZERO = "0";
     private final float PTAS = 166.386f;
     private Calculator calculator;
-    private float result;
+    private float result, firstOperator, secondOperator;
     private boolean isNewNumber = true, isNewOperation = true, pressedEqualButton = false, pressedOperation = false;
 
     private TextView display;
     private Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix,
             buttonSeven, buttonEight, buttonNine, buttonZero, buttonClear, buttonConverter,
-            buttonAddition, buttonEqual;
+            buttonAddition, buttonSubtraction, buttonDivide, buttonMultiply, buttonEqual;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +64,9 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
         buttonClear = (Button) inflate.findViewById(R.id.button_clear);
         buttonConverter = (Button) inflate.findViewById(R.id.button_converter);
         buttonAddition = (Button) inflate.findViewById(R.id.button_plus);
+        buttonSubtraction = (Button) inflate.findViewById(R.id.button_subtraction);
+        buttonDivide = (Button) inflate.findViewById(R.id.button_divide);
+        buttonMultiply = (Button) inflate.findViewById(R.id.button_multiply);
         buttonEqual = (Button) inflate.findViewById(R.id.button_equal);
     }
 
@@ -74,6 +84,9 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
         buttonClear.setOnClickListener(this);
         buttonConverter.setOnClickListener(this);
         buttonAddition.setOnClickListener(this);
+        buttonSubtraction.setOnClickListener(this);
+        buttonMultiply.setOnClickListener(this);
+        buttonDivide.setOnClickListener(this);
         buttonEqual.setOnClickListener(this);
     }
 
@@ -101,6 +114,20 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
                 break;
             case R.id.button_plus:
                 calculate();
+                calculator.setOperation(new Addition());
+                break;
+            case R.id.button_subtraction:
+                calculate();
+                calculator.setOperation(new Subtraction());
+                break;
+
+            case R.id.button_divide:
+                calculate();
+                calculator.setOperation(new Divide());
+                break;
+            case R.id.button_multiply:
+                calculate();
+                calculator.setOperation(new Multyply());
                 break;
             case R.id.button_equal:
                 equalButtonAction();
@@ -141,13 +168,21 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
             String text = "Ya ha pulsado una operación";
             showNotification(text);
         } else {
-            calculator.setFirstOperator(result);
-            calculator.setSecondOperator(tryParseFloat(getTextInDisplay()));
-            result = calculator.performOperation();
+//            calculator.setFirstOperator(tryParseFloat(getTextInDisplay()));
+//            calculator.setSecondOperator(result);
+//            result = calculator.performOperation();
+
+
             if (isNewOperation) {
+                firstOperator = tryParseFloat(getTextInDisplay());
+                result = firstOperator;
                 isNewOperation = false;
                 isNewNumber = true;
             } else {
+                secondOperator = tryParseFloat(getTextInDisplay());
+                calculator.setFirstOperator(result);
+                calculator.setSecondOperator(secondOperator);
+                result = calculator.performOperation();
                 display.setText(removeZeros(String.valueOf(result)));
                 isNewNumber = true;
             }
@@ -157,11 +192,19 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
 
     private void equalButtonAction() {
         if (!isNewOperation) {
-            result = calculator.performOperation();
-            calculator.setFirstOperator(result);
-            calculator.setSecondOperator(tryParseFloat(getTextInDisplay()));
-            result = calculator.performOperation();
-            display.setText(removeZeros(String.valueOf(result)));
+            if (isNewOperation) {
+                firstOperator = tryParseFloat(getTextInDisplay());
+                result = firstOperator;
+                isNewOperation = false;
+                isNewNumber = true;
+            } else {
+                secondOperator = tryParseFloat(getTextInDisplay());
+                calculator.setFirstOperator(result);
+                calculator.setSecondOperator(secondOperator);
+                result = calculator.performOperation();
+                display.setText(removeZeros(String.valueOf(result)));
+                isNewNumber = true;
+            }
             isNewNumber = true;
             isNewOperation = true;
             result = 0;
