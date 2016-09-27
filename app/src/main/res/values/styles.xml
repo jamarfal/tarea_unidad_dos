@@ -10,7 +10,6 @@
         <item name="android:textColor">#0000FF</item>
     </style>
 
-
     <!-- Asteroids Styles -->
     <style name="TitleTextView_Asteroids" parent="android:TextAppearance.DeviceDefault.Large">
         <item name="android:layout_width">match_parent</item>
@@ -104,11 +103,11 @@
         <item name="android:padding">@dimen/padding_row</item>
     </style>
 
-    <style name="Calculator_Operator_Button">
+    <style name="Calculator_Operator_Button" parent="android:Widget.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:background">@color/yellowCalculator</item>
+        <item name="android:background">@color/orange</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:textSize">@dimen/textsize_calculator_buttons</item>
     </style>
