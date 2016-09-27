@@ -23,10 +23,10 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
     private final String ZERO = "0";
     private final float PTAS = 166.386f;
     private Calculator calculator;
-    private float firstOperator, secondOperator, result;
+    private float result;
     private boolean isNewNumber = true, isNewOperation = true, pressedEqualButton = false, pressedOperation = false;
 
-    private TextView display, resultTemporalTextView;
+    private TextView display;
     private Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix,
             buttonSeven, buttonEight, buttonNine, buttonZero, buttonClear, buttonConverter,
             buttonAddition, buttonEqual;
@@ -101,7 +101,7 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
                 clearButtonAction();
                 break;
             case R.id.button_converter:
-
+                converter();
                 break;
             case R.id.button_plus:
                 calculate();
@@ -110,6 +110,12 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
                 equalButtonAction();
                 break;
         }
+    }
+
+    private void converter() {
+        float amount = tryParseFloat(getTextInDisplay());
+        float amountConverted = amount * PTAS;
+        display.setText(String.valueOf(amountConverted));
     }
 
     private void clearButtonAction() {
