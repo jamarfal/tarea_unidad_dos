@@ -1,9 +1,7 @@
 package com.example.martinfalconja.martinfalconja_u2.tabs;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +20,9 @@ public class CourtCounterTab extends Fragment {
     BasketBallPlayer playerA;
     BasketBallPlayer playerB;
     TextView scoreViewPlayerA, scoreViewPlayerB;
-    Button buttonFreeThrowPlayerA, buttonTwoThrowPlayerA, buttonThreeThrowPlayerA, buttonFreeThrowPlayerB, buttonTwoThrowPlayerB, buttonThreeThrowPlayerB, buttonResetPoints;
+    Button buttonFreeThrowPlayerA, buttonTwoThrowPlayerA, buttonThreeThrowPlayerA,
+            buttonFreeThrowPlayerB, buttonTwoThrowPlayerB, buttonThreeThrowPlayerB,
+            buttonResetPoints;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,18 @@ public class CourtCounterTab extends Fragment {
         initButtonListeners();
 
         return view;
+    }
+
+    private void initViews(View view) {
+        scoreViewPlayerA = (TextView) view.findViewById(R.id.team_a_score);
+        scoreViewPlayerB = (TextView) view.findViewById(R.id.team_b_score);
+        buttonThreeThrowPlayerA = (Button) view.findViewById(R.id.button_three_points_player_a);
+        buttonTwoThrowPlayerA = (Button) view.findViewById(R.id.button_two_points_player_a);
+        buttonFreeThrowPlayerA = (Button) view.findViewById(R.id.button_one_points_player_a);
+        buttonThreeThrowPlayerB = (Button) view.findViewById(R.id.button_three_points_player_b);
+        buttonTwoThrowPlayerB = (Button) view.findViewById(R.id.button_two_points_player_b);
+        buttonFreeThrowPlayerB = (Button) view.findViewById(R.id.button_one_points_player_b);
+        buttonResetPoints = (Button) view.findViewById(R.id.reset_points_button);
     }
 
     private void initButtonListeners() {
@@ -85,8 +97,7 @@ public class CourtCounterTab extends Fragment {
                 throwFreeThrowB();
             }
         });
-
-
+        
         buttonResetPoints.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,17 +106,6 @@ public class CourtCounterTab extends Fragment {
         });
     }
 
-    private void initViews(View view) {
-        scoreViewPlayerA = (TextView) view.findViewById(R.id.team_a_score);
-        scoreViewPlayerB = (TextView) view.findViewById(R.id.team_b_score);
-        buttonThreeThrowPlayerA = (Button) view.findViewById(R.id.button_three_points_player_a);
-        buttonTwoThrowPlayerA = (Button) view.findViewById(R.id.button_two_points_player_a);
-        buttonFreeThrowPlayerA = (Button) view.findViewById(R.id.button_one_points_player_a);
-        buttonThreeThrowPlayerB = (Button) view.findViewById(R.id.button_three_points_player_b);
-        buttonTwoThrowPlayerB = (Button) view.findViewById(R.id.button_two_points_player_b);
-        buttonFreeThrowPlayerB = (Button) view.findViewById(R.id.button_one_points_player_b);
-        buttonResetPoints = (Button) view.findViewById(R.id.reset_points_button);
-    }
 
     private void initPlayers() {
         playerA = new BasketBallPlayer(new Score());

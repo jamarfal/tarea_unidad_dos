@@ -16,4 +16,8 @@
 
     <!-- Calculator dimens -->
     <dimen name="padding_row">20dp</dimen>
+    <dimen name="textsize_calculator_buttons">30sp</dimen>
+    <dimen name="padding_result_calculator">30dp</dimen>
+    <dimen name="textsize_calculator_result_textview">50sp</dimen>
+    <dimen name="textsize_calculator_result_temporal_textview">30sp</dimen>
 </resources>

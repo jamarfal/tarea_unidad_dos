@@ -167,8 +167,7 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
             showNotification(text);
         } else {
             if (isNewOperation) {
-                firstOperator = tryParseFloat(getTextInDisplay());
-                result = firstOperator;
+                initOperationValues();
                 isNewOperation = false;
                 isNewNumber = true;
             } else {
@@ -180,10 +179,14 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
         pressedOperation = true;
     }
 
+    private void initOperationValues() {
+        firstOperator = tryParseFloat(getTextInDisplay());
+        result = firstOperator;
+    }
+
     private void equalButtonAction() {
         if (isNewOperation) {
-            firstOperator = tryParseFloat(getTextInDisplay());
-            result = firstOperator;
+            initOperationValues();
         } else {
             calculate();
             display.setText(removeZeros(String.valueOf(result)));
