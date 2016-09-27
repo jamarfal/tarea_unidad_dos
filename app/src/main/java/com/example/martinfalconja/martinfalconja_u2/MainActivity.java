@@ -35,6 +35,6 @@ public class MainActivity extends FragmentActivity {
         fragmentTabHost.addTab(fragmentTabHost.newTabSpec(ASTEROID_TAB).setIndicator(resources.getString(R.string.asteroid_tab)), AsteroidTab.class, null);
         fragmentTabHost.addTab(fragmentTabHost.newTabSpec(CUSTOMBUTTON_TAB).setIndicator(resources.getString(R.string.custombutton_tab)), CustomButtonTab.class, null);
         fragmentTabHost.addTab(fragmentTabHost.newTabSpec(CALCULATOR_TAB).setIndicator(resources.getString(R.string.calculator_tab)), CalculatorTab.class, null);
-        fragmentTabHost.addTab(fragmentTabHost.newTabSpec(COURTCOUNT_TAB).setIndicator(resources.getString(R.string.custombutton_tab)), CourtCounterTab.class, null);
+        fragmentTabHost.addTab(fragmentTabHost.newTabSpec(COURTCOUNT_TAB).setIndicator(resources.getString(R.string.courtcounter_tab)), CourtCounterTab.class, null);
     }
 }

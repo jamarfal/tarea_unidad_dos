@@ -12,30 +12,31 @@
 
     <TextView
         android:id="@+id/game_title_text_view"
-        style="@style/TitleTextView"
-        android:text="@string/asteroid_title" />
+        style="@style/TitleTextView_Asteroids"
+        android:text="@string/asteroid_title"
+        tools:text="@string/asteroid_title" />
 
     <Button
         android:id="@+id/button_play"
-        style="@style/ButtonStyle.Alternative"
+        style="@style/ButtonStyle_Asteroids.Alternative"
         android:text="@string/button_play"
         tools:text="@string/button_play" />
 
     <Button
         android:id="@+id/button_config"
-        style="@style/ButtonStyle.Alternative"
+        style="@style/ButtonStyle_Asteroids.Alternative"
         android:text="@string/button_config"
         tools:text="@string/button_config" />
 
     <Button
         android:id="@+id/button_about"
-        style="@style/ButtonStyle.Alternative"
+        style="@style/ButtonStyle_Asteroids.Alternative"
         android:text="@string/button_about"
         tools:text="@string/button_about" />
 
     <Button
         android:id="@+id/button_exit"
-        style="@style/ButtonStyle.Alternative"
+        style="@style/ButtonStyle_Asteroids.Alternative"
         android:text="@string/button_exit"
         tools:text="@string/button_exit" />
 

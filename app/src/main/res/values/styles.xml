@@ -5,13 +5,14 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/orange</item>
         <item name="android:typeface">serif</item>
         <item name="android:textColor">#0000FF</item>
     </style>
 
 
-    <style name="TitleTextView" parent="android:TextAppearance.DeviceDefault.Large">
+    <!-- Asteroids Styles -->
+    <style name="TitleTextView_Asteroids" parent="android:TextAppearance.DeviceDefault.Large">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/margin_title</item>
@@ -19,30 +20,22 @@
     </style>
 
 
-    <style name="ButtonStyle" parent="android:ButtonBar">
+    <style name="ButtonStyle_Asteroids" parent="android:Widget.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">italic</item>
+        <item name="android:background">@color/orange</item>
     </style>
 
-    <style name="ButtonStyle.Alternative">
+    <style name="ButtonStyle_Asteroids.Alternative">
         <item name="android:textStyle">bold</item>
         <item name="android:padding">@dimen/padding_buttons</item>
         <item name="android:layout_marginTop">@dimen/margin_buttons</item>
         <item name="android:typeface">serif</item>
-        <item name="android:background">@color/colorAccent</item>
     </style>
 
-    <style name="ButtonStyle.Alternative.Land">
+    <style name="ButtonStyle_Asteroids.Alternative.Land">
         <item name="android:layout_marginRight">@dimen/margin_buttons</item>
-    </style>
-
-    <!-- Court Counter Theme -->
-    <style name="CourtCounterTheme" parent="Theme.AppCompat.Light">
-        <!-- Primary theme color of the app (sets background color of app bar) -->
-        <item name="colorPrimary">#FF9800</item>
-        <!-- Background color of buttons in the app -->
-        <item name="colorButtonNormal">#FF9800</item>
     </style>
 
     <!-- Court Counter Styles -->
@@ -61,20 +54,22 @@
         <item name="android:textSize">@dimen/textsize_point_textview</item>
     </style>
 
-    <style name="ButtonThrow">
+    <style name="ButtonThrow" parent="android:Widget.Button">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_marginBottom">@dimen/marginbottom_throw_button</item>
         <item name="android:layout_marginRight">@dimen/margin_throw_button</item>
         <item name="android:layout_marginLeft">@dimen/margin_throw_button</item>
+        <item name="android:background">@color/orange</item>
     </style>
 
-    <style name="ResetPointsButton">
+    <style name="ResetPointsButton" parent="android:Widget.Button">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_centerInParent">true</item>
         <item name="android:textAllCaps">true</item>
+        <item name="android:background">@color/orange</item>
     </style>
 
     <!-- Calculator Styles -->

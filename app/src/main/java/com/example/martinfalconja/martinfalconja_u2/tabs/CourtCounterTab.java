@@ -33,14 +33,8 @@ public class CourtCounterTab extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // create ContextThemeWrapper from the original Activity Context with the custom theme
-        final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.CourtCounterTheme);
 
-        // clone the inflater using the ContextThemeWrapper
-        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
-
-        // inflate the layout using the cloned inflater, not default inflater
-        View view = localInflater.inflate(R.layout.tab_court_counter, container, false);
+        View view = inflater.inflate(R.layout.tab_court_counter, container, false);
 
         initViews(view);
 

@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/number_edit_text"
         android:layout_centerHorizontal="true"
+        android:background="@color/orange"
         android:tag="0"
         android:text="@string/_0" />
 

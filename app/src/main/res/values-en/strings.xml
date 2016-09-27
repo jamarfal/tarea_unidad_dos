@@ -11,7 +11,7 @@
     <!-- Tabs Names -->
     <string name="asteroid_tab">Asteroids</string>
     <string name="custombutton_tab">Custom Button</string>
-    <string name="courtcounter_tab">Contador Baloncesto</string>
+    <string name="courtcounter_tab">Counter Basket</string>
 
 
     <!-- Asteroid tab Strings -->
@@ -29,4 +29,5 @@
     <string name="_2_points">+2 Points</string>
     <string name="free_throw">Free Throw</string>
     <string name="reset_button">Reset</string>
+    <string name="calculator_tab">Calculator</string>
 </resources>
