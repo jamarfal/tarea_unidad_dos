@@ -93,6 +93,8 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button_zero:
+                showZeroInDisplay();
+                break;
             case R.id.button_one:
             case R.id.button_two:
             case R.id.button_three:
@@ -149,6 +151,18 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
         pressedOperation = false;
     }
 
+
+    private void showZeroInDisplay() {
+        if (isNewNumber) {
+            display.setText(ZERO);
+            isNewNumber = true;
+            pressedOperation = false;
+        } else {
+            display.setText(getTextInDisplay() + ZERO);
+            isNewNumber = false;
+            pressedOperation = false;
+        }
+    }
 
     private void showNumberInDisplay(String numberStr) {
         if (isNewNumber) {

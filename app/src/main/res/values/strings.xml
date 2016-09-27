@@ -45,8 +45,8 @@
     <string name="equal" translatable="false">=</string>
     <string name="c" translatable="false">c</string>
     <string name="ptas" translatable="false">Ptas</string>
-    <string name="divide_symbol">%</string>
-    <string name="multiply_symbol">x</string>
-    <string name="subtraction_symbol">-</string>
+    <string name="divide_symbol" translatable="false">÷</string>
+    <string name="multiply_symbol" translatable="false">x</string>
+    <string name="subtraction_symbol" translatable="false">-</string>
     <string name="operation_pending">Ya ha pulsado una operación</string>
 </resources>
