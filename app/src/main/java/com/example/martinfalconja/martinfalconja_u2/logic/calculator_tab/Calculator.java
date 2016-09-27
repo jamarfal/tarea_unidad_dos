@@ -9,10 +9,10 @@ public class Calculator {
     private float secondOperator;
     private MathOperation operation;
 
-    public Calculator() {
+    public Calculator(MathOperation operation) {
         this.firstOperator = 0;
         this.secondOperator = 0;
-        this.operation = new Addition();
+        this.operation = operation;
     }
 
     public Calculator(float firstOperator, float secondOperator, MathOperation operation) {
@@ -47,6 +47,11 @@ public class Calculator {
 
     public float performOperation() {
         return operation.operate(firstOperator, secondOperator);
+    }
+
+    public void resetOperators() {
+        this.firstOperator = 0.0f;
+        this.secondOperator = 0.0f;
     }
 
 }

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.martinfalconja.martinfalconja_u2.R;
 import com.example.martinfalconja.martinfalconja_u2.logic.calculator_tab.Addition;
@@ -21,8 +22,11 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
 
     private final String ZERO = "0";
     private final float PTAS = 166.386f;
+    private Calculator calculator;
+    private float firstOperator, secondOperator, result;
+    private boolean isNewNumber = true, isNewOperation = true, pressedEqualButton = false, pressedOperation = false;
 
-    private TextView resultTextView, resultTemporalTextView;
+    private TextView display, resultTemporalTextView;
     private Button buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix,
             buttonSeven, buttonEight, buttonNine, buttonZero, buttonClear, buttonConverter,
             buttonAddition, buttonEqual;
@@ -37,12 +41,13 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
         View inflate = inflater.inflate(R.layout.tab_calculator, container, false);
         initViews(inflate);
         initButtonOnclickListeners();
+        calculator = new Calculator(new Addition());
         return inflate;
     }
 
 
     private void initViews(View inflate) {
-        resultTextView = (TextView) inflate.findViewById(R.id.result_text_view);
+        display = (TextView) inflate.findViewById(R.id.result_text_view);
         buttonOne = (Button) inflate.findViewById(R.id.button_one);
         buttonTwo = (Button) inflate.findViewById(R.id.button_two);
         buttonThree = (Button) inflate.findViewById(R.id.button_three);
@@ -89,18 +94,111 @@ public class CalculatorTab extends Fragment implements View.OnClickListener {
             case R.id.button_seven:
             case R.id.button_eight:
             case R.id.button_nine:
-
+                String numberStr = (String) view.getTag();
+                showNumberInDisplay(numberStr);
                 break;
             case R.id.button_clear:
-
+                clearButtonAction();
                 break;
             case R.id.button_converter:
 
                 break;
             case R.id.button_plus:
+                calculate();
                 break;
             case R.id.button_equal:
+                equalButtonAction();
                 break;
         }
     }
+
+    private void clearButtonAction() {
+        display.setText(ZERO);
+        result = 0.0f;
+        calculator.resetOperators();
+        isNewNumber = true;
+        isNewOperation = true;
+        pressedOperation = false;
+        pressedEqualButton = false;
+    }
+
+
+    private void showNumberInDisplay(String numberStr) {
+        if (isNewNumber) {
+            display.setText(numberStr);
+            isNewNumber = false;
+            pressedOperation = false;
+        } else {
+            display.setText(getTextInDisplay() + numberStr);
+        }
+    }
+
+
+    private void calculate() {
+        if (pressedOperation) {
+            String text = "Ya ha pulsado una operación";
+            showNotification(text);
+        } else {
+            calculator.setFirstOperator(result);
+            calculator.setSecondOperator(tryParseFloat(getTextInDisplay()));
+            result = calculator.performOperation();
+            if (isNewOperation) {
+                isNewOperation = false;
+                isNewNumber = true;
+            } else {
+                display.setText(removeZeros(String.valueOf(result)));
+                isNewNumber = true;
+            }
+        }
+        pressedOperation = true;
+    }
+
+    private void equalButtonAction() {
+        if (!isNewOperation) {
+            result = calculator.performOperation();
+            calculator.setFirstOperator(result);
+            calculator.setSecondOperator(tryParseFloat(getTextInDisplay()));
+            result = calculator.performOperation();
+            display.setText(removeZeros(String.valueOf(result)));
+            isNewNumber = true;
+            isNewOperation = true;
+            result = 0;
+        }
+    }
+
+
+    private String getTextInDisplay() {
+        return display.getText().toString();
+    }
+
+    private String removeZeros(String number) {
+        int lastDigit = number.length() - 1;
+
+        while (number.charAt(lastDigit) == '0') {
+            number = number.substring(0, lastDigit);
+            lastDigit = number.length() - 1;
+        }
+
+        if (number.charAt(lastDigit) == '.') {
+            number = number.substring(0, lastDigit);
+        }
+        return number;
+    }
+
+    private void showNotification(String text) {
+        Toast.makeText(getContext(),
+                text, Toast.LENGTH_SHORT).show();
+    }
+
+
+    private float tryParseFloat(String numStr) {
+        float number;
+        try {
+            number = Float.parseFloat(numStr);
+        } catch (NumberFormatException exception) {
+            number = 0.0f;
+        }
+        return number;
+    }
+
 }
